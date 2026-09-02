@@ -415,6 +415,7 @@ main{
 
 footer{
     position: sticky;
+    z-index: 999 !important;
     bottom: 0;
     width: 100%;
     

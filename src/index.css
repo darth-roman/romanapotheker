@@ -449,6 +449,7 @@ main #influencers .influencer .image img {
 
 footer {
   position: sticky;
+  z-index: 999 !important;
   bottom: 0;
   width: 100%;
   display: flex;
