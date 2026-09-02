@@ -11,7 +11,6 @@
 
 :root[data-theme=light] {
   color-scheme: light;
-  font-size: 14px;
   /* Surface Colors */
   --surface: hsl(225, 100%, 98%);
   --surface-dim: hsl(213, 62%, 87%);
@@ -41,7 +40,6 @@
 
 :root {
   color-scheme: dark;
-  font-size: 13px;
   /* Surface Colors */
   --surface: hsl(210, 10%, 8%);
   --surface-dim: hsl(210, 10%, 8%);
