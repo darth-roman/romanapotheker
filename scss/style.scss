@@ -50,6 +50,8 @@
 
 :root {
     color-scheme: dark;
+
+    font-size: 13px;
     /* Surface Colors */
     --surface: hsl(210, 10%, 8%);
     --surface-dim: hsl(210, 10%, 8%);
@@ -106,6 +108,12 @@ header{
     #logo{
         @include utils.generateFlex(row, center, center);
     }
+}
+
+#root{
+    width: 100%;
+    @include utils.generateFlex(column, center, center, 2rem);
+
 }
 
 main{
@@ -183,8 +191,10 @@ main{
         gap: 0.4rem;
     }
     #subjects{
+        width: 100%;
         @include utils.generateFlex(column, flex-start, start, 1rem);
         .subject{
+            width: 100%;
             @include utils.generateFlex(column, start, space-between, 1rem);
             padding: 1.5rem 1rem;
             border-radius: 1rem;
@@ -342,8 +352,10 @@ main{
     }
 
     #yt-channels{
+        width: 100%;
         @include utils.generateFlex(column, center, start, 1rem);
         .channel{
+            width: minmax(50%, 80%);
             // padding: 1rem;
             border-radius: 1rem;
             background: rgba(from var(--outline-variant) r g b / 0.4);
@@ -455,6 +467,32 @@ footer{
             color: var(--on-primary-container);
             background: rgba(from var(--primary-container) r g b / 0.9);
             padding: 1rem;
+        }
+    }
+}
+
+@media screen and (width >= 900px) {
+    main{
+        width: 70%;
+
+        #subjects{
+            @include utils.generateGrid(2, center, center, 1rem)
+        }
+
+        #qcms{
+            @include utils.generateGrid(2, center, center, 1rem)
+        }
+
+        #yt-channels{
+            @include utils.generateGrid(2, center, center, 1rem)
+        }
+
+        #ai-tools{
+            @include utils.generateGrid(2, center, center, 1rem)
+        }
+
+        #influencers{
+            @include utils.generateGrid(2, center, center, 1rem)
         }
     }
 }

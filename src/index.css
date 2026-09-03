@@ -40,6 +40,7 @@
 
 :root {
   color-scheme: dark;
+  font-size: 13px;
   /* Surface Colors */
   --surface: hsl(210, 10%, 8%);
   --surface-dim: hsl(210, 10%, 8%);
@@ -93,6 +94,15 @@ header #logo {
   align-items: center;
   justify-content: center;
   gap: 0.1rem;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 main {
@@ -160,6 +170,7 @@ main .title {
   gap: 0.4rem;
 }
 main #subjects {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -167,6 +178,7 @@ main #subjects {
   gap: 1rem;
 }
 main #subjects .subject {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -359,6 +371,7 @@ main #drives .drive-link .drive-deets a:hover {
   color: var(--on-surface-variant);
 }
 main #yt-channels {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -366,6 +379,7 @@ main #yt-channels {
   gap: 1rem;
 }
 main #yt-channels .channel {
+  width: minmax(50%, 80%);
   border-radius: 1rem;
   background: rgba(from var(--outline-variant) r g b/0.4);
 }
@@ -497,6 +511,47 @@ footer nav .nav-item.active {
   color: var(--on-primary-container);
   background: rgba(from var(--primary-container) r g b/0.9);
   padding: 1rem;
+}
+
+@media screen and (width >= 900px) {
+  main {
+    width: 70%;
+  }
+  main #subjects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  main #qcms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  main #yt-channels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  main #ai-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  main #influencers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

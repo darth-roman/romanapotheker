@@ -6,8 +6,6 @@ export function Curriculum(){
 
     return(
     <>
-        <div class="circle green-circle"></div>
-        <div class="square red-square"></div>
         <section id="welcome">
             <h2>Welcome to Pharmacy</h2>
             <p>
