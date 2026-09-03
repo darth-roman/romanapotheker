@@ -1,9 +1,45 @@
 import { Qcm } from "../components/Qcm";
 import { Subject } from "../components/Subject";
+import { supabase } from "../utils/supabase"
+import { useState, useEffect } from 'react'
+
 
 
 export function Curriculum(){
+    const [subjects, setSubjects] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [errorMessage, setErrorMessage] = useState('')
 
+    async function fetchSubjects(){
+        const { data, error } = await supabase.schema("public").from("subjects").select("*")
+        if (error) {
+            throw error
+        }
+        return data
+    }
+
+    useEffect(() => {
+        let cancelled = false
+
+        fetchSubjects().then((data) => {
+            if (!cancelled) {
+                setSubjects(data)
+                setLoading(false)
+            }
+        }).catch((error) => {
+            if (!cancelled) {
+                console.error(error)
+                setErrorMessage(error.message || 'Unable to load subjects.')
+                setLoading(false)
+            }
+        })
+
+        
+
+        return () => {
+            cancelled = true
+        }
+    }, [])
     return(
     <>
         <section id="welcome">
@@ -24,37 +60,28 @@ export function Curriculum(){
 
         </section>
         {/* <!-- These can be "pages" --> */}
-        <div class="title">
-            <span class="material-icons">map</span>
+        <div className="title">
+            <span className="material-icons">map</span>
             <h2>Core Subjects</h2>
         </div>
         <section id="subjects">
-            <section class="subject">
-                <div class="subject-head">
-                    <div class="icon">
-                        <span class="material-icons">local_florist</span>
-                        <h2>Botany</h2>
-                    </div>
-                    <div class="coeff">4 Coeff</div>
-                </div>
-                <div class="subject-desc">
-                    <p>Structure, bonding, and reactivity of organic compounds essential for drug synthesis.</p>
-                </div>
-                <div class="subject-actions">
-                    <a href="#">More Info</a>
-                </div>
-            </section>
-            <Subject
-                subjectIcon="science"
-                subjectName="General Chemistry"
-                coeff="5 Coeff"
-                subjectDesc="Fundamental principles of matter, reactions, and laboratory techniques for pharmacy practice."
-                linkToProgram="#general-chemistry"
-            />
+            {loading && <p>Loading subjects...</p>}
+            {!loading && errorMessage && <p>{errorMessage}</p>}
+            {!loading && !errorMessage && subjects.length === 0 && <p>No subjects found.</p>}
+            {!loading && !errorMessage && subjects.map((subject) => (
+                <Subject
+                    key={subject.id}
+                    subjectIcon={subject.subject_icon}
+                    subjectName={subject.subject_name}
+                    coeff={subject.coeff}
+                    subjectDesc={subject.subject_description}
+                    linkToProgram={subject.link_to_program}
+                />
+            ))}
         </section>
 
-        <div class="title">
-            <span class="material-icons">rule</span>
+        <div className="title">
+            <span className="material-icons">rule</span>
             <h2>Exams Books</h2>
         </div>
 
@@ -62,24 +89,24 @@ export function Curriculum(){
             <Qcm qcmName="Testini" rating="4.7" qcmUrl="#testini" />
             <Qcm qcmName="QCMS 25" rating="4.4" qcmUrl="#qcms-25" />
         </section>
-        <div class="title">
-            <span class="material-icons">psychology</span>
+        <div className="title">
+            <span className="material-icons">psychology</span>
             <h2>TDs and TPs</h2>
         </div>
 
         <section id="td-tp">
-            <div id="td" class="info-sect">
-                <div class="sect-head">
-                    <span class="material-icons">book</span>
+            <div id="td" className="info-sect">
+                <div className="sect-head">
+                    <span className="material-icons">book</span>
                     <h3>TDs (Travaux Derigees)</h3>
                 </div>
                 <p>
                     Problem-solving and theoretical application sessions. Subjects like General Chemistry and Organic Chemistry heavily feature these to reinforce lecture concepts.
                 </p>
             </div>
-            <div id="tp" class="info-sect">
-                <div class="sect-head">
-                    <span class="material-icons">book</span>
+            <div id="tp" className="info-sect">
+                <div className="sect-head">
+                    <span className="material-icons">book</span>
                     <h3>TPs (Travaux Pratiques)</h3>
                 </div>
                 <p>

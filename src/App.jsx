@@ -4,14 +4,17 @@ import { Switch, Route } from 'wouter'
 import { Resources } from './pages/resources'
 import { Navbar } from './components/Navbar'
 
-function App() {
 
+
+
+function App() {
+  
 
   return (
     <>
       <header>
           <div id="logo">
-              <span class="material-icons">local_pharmacy</span>
+              <span className="material-icons">local_pharmacy</span>
               <h2>PharmaGuide</h2>
           </div>
       </header>
