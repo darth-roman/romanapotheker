@@ -76,6 +76,7 @@ export function Curriculum(){
                     coeff={subject.coeff}
                     subjectDesc={subject.subject_description}
                     linkToProgram={subject.link_to_program}
+                    relatedSubjects={subject.connected_subjects}
                 />
             ))}
         </section>

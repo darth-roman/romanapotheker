@@ -1,4 +1,4 @@
-export function Subject({subjectIcon, subjectName, coeff, subjectDesc, linkToProgram}){
+export function Subject({subjectIcon, subjectName, coeff, subjectDesc, relatedSubjects}){
     return(
         <section className="subject">
             <div className="subject-head">
@@ -12,7 +12,9 @@ export function Subject({subjectIcon, subjectName, coeff, subjectDesc, linkToPro
                 <p>{subjectDesc}</p>
             </div>
             <div className="subject-actions">
-                <a href={linkToProgram}>More Info</a>
+                {/* <a href={linkToProgram}>More Info</a> */}
+                <strong><p>Connected To (Next Years):</p></strong>
+                {relatedSubjects.split(",").map(sub => <li>🔬 {sub}</li>)}
             </div>
         </section>
     )
