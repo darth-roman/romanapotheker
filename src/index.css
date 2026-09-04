@@ -71,7 +71,7 @@
   --primary-container: hsl(191, 95%, 18%); /* Deep blue container */
   --on-primary-container: hsl(191, 85%, 82%); /* Light blue container text */
   /* Secondary (Plum Purple) */
-  --secondary: hsl(280, 55%, 62%); /* Soft plum purple */
+  --secondary: hsl(280, 47%, 49%); /* Soft plum purple */
   --on-secondary: hsl(280, 45%, 10%); /* Dark contrast text */
   --secondary-container: hsl(280, 45%, 22%); /* Deep purple container */
   --on-secondary-container: hsl(280, 45%, 88%); /* Light purple container text */
@@ -88,7 +88,7 @@
   /* Error / Danger (#DD1C1A - Crimson Red) */
   --error: hsl(1, 79%, 48%); /* #DD1C1A Red */
   --on-error: hsl(1, 100%, 98%); /* Bright white text */
-  --error-container: hsl(1, 70%, 36%); /* Dark red container */
+  --error-container: hsl(1, 78%, 32%); /* Dark red container */
   --on-error-container: hsl(1, 90%, 85%); /* Light red text */
   /* Neutral / Text & Borders */
   --on-surface: hsl(205, 12%, 90%); /* Main text */
@@ -427,6 +427,9 @@ main #yt-channels .channel .channel-image img {
   border-radius: 1rem;
   width: 100%;
   object-fit: cover;
+}
+main #yt-channels .channel .channel-deets a {
+  color: var(--on-error-container);
 }
 main #yt-channels .channel .channel-deets h3 {
   font-size: 1.5rem;
