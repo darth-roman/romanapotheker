@@ -11,61 +11,90 @@
 
 :root[data-theme=light] {
   color-scheme: light;
-  /* Surface Colors */
-  --surface: hsl(225, 100%, 98%);
-  --surface-dim: hsl(213, 62%, 87%);
-  --surface-bright: hsl(225, 100%, 98%);
+  font-size: 13px;
+  /* Surface Colors (Clean, warm-tinted light surfaces) */
+  --surface: hsl(205, 30%, 98%);
+  --surface-dim: hsl(205, 15%, 88%);
+  --surface-bright: hsl(205, 30%, 98%);
   --surface-container-lowest: hsl(0, 0%, 100%);
-  --surface-container-low: hsl(216, 100%, 96%);
-  --surface-container: hsl(216, 100%, 94%);
-  --surface-container-high: hsl(216, 100%, 92%);
-  --surface-container-highest: hsl(216, 100%, 90%);
-  /* Brand & Accents */
-  --primary: hsl(130, 23%, 40%);
-  --on-primary: hsl(0, 0%, 100%);
-  --primary-container: hsl(130, 30%, 85%);
-  --on-primary-container: hsl(130, 40%, 15%);
-  --secondary: hsl(15, 90%, 75%); /* Muted Terracotta */
-  --on-secondary: hsl(15, 100%, 15%);
-  --tertiary: hsl(247, 95%, 80%); /* Soft Lavender */
-  --on-tertiary: hsl(247, 50%, 20%);
-  --quaternary: hsl(45, 50%, 95%); /* Warm Sand */
-  --on-quaternary: hsl(45, 40%, 15%);
-  /* Neutral/Text */
-  --on-surface: hsl(225, 30%, 10%);
-  --on-surface-variant: hsl(225, 10%, 40%);
-  --outline: hsl(225, 10%, 60%);
-  --outline-variant: hsl(225, 10%, 85%);
+  --surface-container-low: hsl(205, 25%, 95%);
+  --surface-container: hsl(205, 20%, 92%);
+  --surface-container-high: hsl(205, 18%, 89%);
+  --surface-container-highest: hsl(205, 16%, 85%);
+  /* Brand & Accents (Primary: #06AED5 - Sky Blue) */
+  --primary: hsl(191, 95%, 38%); /* Sky Blue (optimized for light mode contrast) */
+  --on-primary: hsl(0, 0%, 100%); /* Pure white text */
+  --primary-container: hsl(191, 85%, 90%); /* Very light blue surface */
+  --on-primary-container: hsl(191, 95%, 15%); /* Deep blue text */
+  /* Secondary (Plum Purple) */
+  --secondary: hsl(280, 45%, 32%); /* Plum purple base */
+  --on-secondary: hsl(0, 0%, 100%); /* Pure white text */
+  --secondary-container: hsl(280, 35%, 90%); /* Light lavender container */
+  --on-secondary-container: hsl(280, 45%, 15%); /* Deep purple container text */
+  /* Tertiary (#F0C808 - Gold) */
+  --tertiary: hsl(48, 95%, 36%); /* Darkened gold for 4.5:1 text accessibility */
+  --on-tertiary: hsl(0, 0%, 100%); /* Pure white text */
+  --tertiary-container: hsl(48, 90%, 88%); /* Soft yellow surface */
+  --on-tertiary-container: hsl(48, 95%, 12%); /* Deep warm brown text */
+  /* Quaternary (#FFF1D0 - Warm Cream) */
+  --quaternary: hsl(42, 60%, 45%); /* Warm ochre tone */
+  --on-quaternary: hsl(0, 0%, 100%); /* White text */
+  --quaternary-container: hsl(42, 100%, 93%); /* Cream surface (#FFF1D0) */
+  --on-quaternary-container: hsl(42, 70%, 15%); /* Dark warm text */
+  /* Error / Danger (#DD1C1A - Crimson Red) */
+  --error: hsl(1, 79%, 48%); /* #DD1C1A Red */
+  --on-error: hsl(0, 0%, 100%); /* Pure white text */
+  --error-container: hsl(1, 100%, 93%); /* Very light red surface */
+  --on-error-container: hsl(1, 85%, 18%); /* Deep red text */
+  /* Neutral / Text & Borders */
+  --on-surface: hsl(205, 30%, 10%); /* High contrast main text */
+  --on-surface-variant: hsl(205, 12%, 35%); /* Muted text */
+  --outline: hsl(205, 10%, 65%); /* Standard borders & input outlines */
+  --outline-variant: hsl(205, 15%, 85%); /* Subtle dividers */
 }
 
 :root {
   color-scheme: dark;
   font-size: 13px;
-  /* Surface Colors */
-  --surface: hsl(210, 10%, 8%);
-  --surface-dim: hsl(210, 10%, 8%);
-  --surface-bright: hsl(210, 4%, 23%);
-  --surface-container-lowest: hsl(210, 17%, 5%);
-  --surface-container-low: hsl(210, 8%, 11%);
-  --surface-container: hsl(210, 8%, 14%);
-  --surface-container-high: hsl(210, 8%, 17%);
-  --surface-container-highest: hsl(210, 8%, 20%);
-  /* Brand & Accents */
-  --primary: hsl(127, 21%, 61%);
-  --on-primary: hsl(127, 25%, 10%);
-  --primary-container: hsl(127, 15%, 25%);
-  --on-primary-container: hsl(127, 30%, 85%);
-  --secondary: hsl(15, 60%, 64%); /* Muted Terracotta */
-  --on-secondary: hsl(15, 70%, 10%);
-  --tertiary: hsl(247, 95%, 80%); /* Soft Lavender */
-  --on-tertiary: hsl(247, 40%, 15%);
-  --quaternary: hsl(45, 40%, 94%); /* Warm Sand */
-  --on-quaternary: hsl(45, 20%, 15%);
-  /* Neutral/Text */
-  --on-surface: hsl(210, 5%, 90%);
-  --on-surface-variant: hsl(210, 5%, 70%);
-  --outline: hsl(210, 5%, 40%);
-  --outline-variant: hsl(210, 5%, 25%);
+  /* Surface Colors (Slate/Cool-toned dark neutral core) */
+  --surface: hsl(205, 28%, 8%);
+  --surface-dim: hsl(205, 28%, 8%);
+  --surface-bright: hsl(205, 18%, 23%);
+  --surface-container-lowest: hsl(205, 30%, 5%);
+  --surface-container-low: hsl(205, 22%, 11%);
+  --surface-container: hsl(205, 20%, 14%);
+  --surface-container-high: hsl(205, 18%, 17%);
+  --surface-container-highest: hsl(205, 16%, 20%);
+  /* Brand & Accents (Primary: #06AED5) */
+  --primary: hsl(191, 95%, 43%); /* #06AED5 Sky Blue */
+  --on-primary: hsl(191, 100%, 8%); /* Dark contrast text */
+  --primary-container: hsl(191, 95%, 18%); /* Deep blue container */
+  --on-primary-container: hsl(191, 85%, 82%); /* Light blue container text */
+  /* Secondary (Plum Purple) */
+  --secondary: hsl(280, 55%, 62%); /* Soft plum purple */
+  --on-secondary: hsl(280, 45%, 10%); /* Dark contrast text */
+  --secondary-container: hsl(280, 45%, 22%); /* Deep purple container */
+  --on-secondary-container: hsl(280, 45%, 88%); /* Light purple container text */
+  /* Tertiary (#F0C808 - Vivid Gold) */
+  --tertiary: hsl(50, 99%, 70%); /* #F0C808 Gold */
+  --on-tertiary: hsl(50, 100%, 8%); /* High contrast text */
+  --tertiary-container: hsl(50, 80%, 18%); /* Dark golden container */
+  --on-tertiary-container: hsl(50, 90%, 82%); /* Light golden text */
+  /* Quaternary (#FFF1D0 - Warm Cream / Sand) */
+  --quaternary: hsl(42, 100%, 91%); /* #FFF1D0 Cream */
+  --on-quaternary: hsl(42, 50%, 12%); /* Deep brown text */
+  --quaternary-container: hsl(42, 35%, 22%); /* Warm dark container */
+  --on-quaternary-container: hsl(42, 80%, 88%); /* Soft warm text */
+  /* Error / Danger (#DD1C1A - Crimson Red) */
+  --error: hsl(1, 79%, 48%); /* #DD1C1A Red */
+  --on-error: hsl(1, 100%, 98%); /* Bright white text */
+  --error-container: hsl(1, 70%, 36%); /* Dark red container */
+  --on-error-container: hsl(1, 90%, 85%); /* Light red text */
+  /* Neutral / Text & Borders */
+  --on-surface: hsl(205, 12%, 90%); /* Main text */
+  --on-surface-variant: hsl(205, 10%, 72%); /* Secondary text */
+  --outline: hsl(205, 10%, 42%); /* Borders & dividers */
+  --outline-variant: hsl(205, 12%, 24%); /* Subtle borders */
 }
 
 body {
@@ -73,7 +102,7 @@ body {
   width: 100vw;
   max-width: 100%;
   font-family: var(--contentFont);
-  background-color: var(--surface);
+  background-color: var(--surface-container-low);
   color: var(--on-surface);
   display: flex;
   flex-direction: column;
@@ -176,6 +205,7 @@ main #subjects {
   align-items: flex-start;
   justify-content: start;
   gap: 1rem;
+  position: relative;
 }
 main #subjects .subject {
   width: 100%;
@@ -187,7 +217,7 @@ main #subjects .subject {
   gap: 1rem;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--outline-variant) r g b/0.8);
 }
 main #subjects .subject .subject-head {
   width: 100%;
@@ -233,7 +263,8 @@ main #qcms .qcm {
   gap: 1rem;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--secondary) r g b/1);
+  color: var(--on-secondary);
 }
 main #qcms .qcm .qcm-head {
   display: flex;
@@ -244,8 +275,8 @@ main #qcms .qcm .qcm-head {
   width: 100%;
 }
 main #qcms .qcm .qcm-head .cover {
-  color: var(--on-primary-container);
-  background: rgba(from var(--primary-container) r g b/0.9);
+  color: var(--on-secondary-container);
+  background: rgba(from var(--secondary-container) r g b/0.9);
   border-radius: 1rem;
 }
 main #qcms .qcm .qcm-head .cover span {
@@ -273,12 +304,13 @@ main #qcms .qcm .qcm-head .deets p {
 main #qcms .qcm .qcm-link {
   text-align: center;
   width: 100%;
-  background: rgba(from var(--primary-container) r g b/0.9);
+  background: rgba(from var(--secondary-container) r g b/0.9);
   border-radius: 1rem;
   padding: 1rem;
 }
 main #qcms .qcm .qcm-link a {
   width: 100%;
+  color: var(--on-secondary-container);
 }
 main #td-tp {
   width: 100%;
@@ -343,14 +375,14 @@ main #drives .drive-link {
   align-items: center;
   justify-content: start;
   gap: 1rem;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--primary-container) r g b/1);
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid var(--outline);
 }
 main #drives .drive-link .drive-icon {
   background: rgba(from var(--primary) r g b/0.4);
-  color: hsl(from var(--on-surface) h s l);
+  color: hsl(from var(--on-primary-container) h s l);
   border-radius: 100%;
 }
 main #drives .drive-link .drive-icon span {
@@ -367,9 +399,10 @@ main #drives .drive-link .drive-deets {
 main #drives .drive-link .drive-deets a {
   text-decoration: none;
   font-size: 1.35rem;
+  color: var(--tertiary);
 }
 main #drives .drive-link .drive-deets a:hover {
-  color: var(--on-surface-variant);
+  color: var(--on-tertiary-container);
 }
 main #yt-channels {
   width: 100%;
@@ -382,7 +415,7 @@ main #yt-channels {
 main #yt-channels .channel {
   width: minmax(50%, 80%);
   border-radius: 1rem;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--error-container) r g b/1);
 }
 main #yt-channels .channel .channel-image {
   border-radius: 1rem;
@@ -390,7 +423,7 @@ main #yt-channels .channel .channel-image {
 }
 main #yt-channels .channel .channel-image img {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   border-radius: 1rem;
   width: 100%;
   object-fit: cover;
@@ -416,7 +449,7 @@ main #ai-tools {
 }
 main #ai-tools .ai-tool {
   width: 100%;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--quaternary-container) r g b/1);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -435,7 +468,7 @@ main #influencers {
 }
 main #influencers .influencer {
   width: 100%;
-  background: rgba(from var(--outline-variant) r g b/0.4);
+  background: rgba(from var(--outline-variant) r g b/0.8);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -497,6 +530,7 @@ footer nav .nav-item {
   justify-content: center;
   gap: 1rem;
   border-radius: 2rem;
+  padding: 1rem;
 }
 footer nav .nav-item a {
   display: flex;
@@ -511,7 +545,6 @@ footer nav .nav-item a span {
 footer nav .nav-item.active {
   color: var(--on-primary-container);
   background: rgba(from var(--primary-container) r g b/0.9);
-  padding: 1rem;
 }
 
 @media screen and (width >= 900px) {
