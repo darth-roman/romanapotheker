@@ -2,7 +2,7 @@ export function Channel({channelName, channelDesc, channelUrl, subject}){
     return(
         <div className="channel">
             <div className="channel-image">
-                <img src="src/assets/thumbnail.jpeg" alt="" />
+                <img src="/thumbnail.jpeg" alt="" />
             </div>
             <div className="channel-deets">
                 <h3><a href={channelUrl} target="_blank">{channelName}</a></h3>
