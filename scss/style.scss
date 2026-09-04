@@ -107,7 +107,7 @@
     /* Error / Danger (#DD1C1A - Crimson Red) */
     --error: hsl(1, 79%, 48%);                     /* #DD1C1A Red */
     --on-error: hsl(1, 100%, 98%);                 /* Bright white text */
-    --error-container: hsl(1, 78%, 32%);           /* Dark red container */
+    --error-container: hsl(1, 63%, 43%);           /* Dark red container */
     --on-error-container: hsl(1, 90%, 85%);        /* Light red text */
 
     /* Neutral / Text & Borders */
@@ -391,17 +391,19 @@ main{
         width: 100%;
         @include utils.generateFlex(column, center, start, 1rem);
         .channel{
-            width: minmax(50%, 80%);
+            width: minmax(50%, 60%);
+            height: 100%;
             // padding: 1rem;
             border-radius: 1rem;
             background: rgba(from var(--error-container) r g b / 1);
+            color: var(--on-error);
             .channel-image{
                 border-radius: 1rem;
-                
-                background: linear-gradient(360deg, var(--surface), #ffffff11);
+                // box-shadow: 0rem 0rem 0rem black;
+                // background: linear-gradient(360deg, var(--surface), #ffffff11);
                 img{
                     position: relative;
-                    z-index: 1;
+                    // z-index: 1;
                     border-radius: 1rem;
                     width: 100%;
                     object-fit: cover;
@@ -409,10 +411,17 @@ main{
             }
             .channel-deets{
                 a{
-                    color: var(--on-error-container);
+                    color: hsl(from var(--on-error) h s 100%);
                 }
                 h3{
                     font-size: 1.5rem;
+                }
+
+                small{
+                    background-color: var(--on-surface);
+                    color: var(--surface);
+                    padding: 0.3rem;
+                    border-radius: 0.4rem;
                 }
                 padding: 1rem;
                 @include utils.generateFlex(column, start, start, 1rem);

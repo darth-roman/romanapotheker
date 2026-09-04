@@ -1,10 +1,10 @@
 export function Influencer({imgSrc, aliasName, realName, instagramName, country, faculty}){
     return(
-        <div class="influencer">
-            <div class="image">
+        <div className="influencer">
+            <div className="image">
                 <img src={imgSrc} alt="" />
             </div>
-            <div class="deets">
+            <div className="deets">
                 <h4>{aliasName} / {realName}</h4>
                 <a href={instagramName}>@{instagramName}</a>
                 <p>{country} / {faculty}</p>
