@@ -7,11 +7,20 @@ import { useState, useEffect } from 'react'
 
 export function Curriculum(){
     const [subjects, setSubjects] = useState([])
+    const [qcms, setQCMS] = useState([])
     const [loading, setLoading] = useState(true)
     const [errorMessage, setErrorMessage] = useState('')
 
     async function fetchSubjects(){
         const { data, error } = await supabase.schema("public").from("subjects").select("*")
+        if (error) {
+            throw error
+        }
+        return data
+    }
+
+    async function fetchQCMs(){
+        const { data, error } = await supabase.schema("public").from("qcms").select("*")
         if (error) {
             throw error
         }
@@ -24,6 +33,19 @@ export function Curriculum(){
         fetchSubjects().then((data) => {
             if (!cancelled) {
                 setSubjects(data)
+                setLoading(false)
+            }
+        }).catch((error) => {
+            if (!cancelled) {
+                console.error(error)
+                setErrorMessage(error.message || 'Unable to load subjects.')
+                setLoading(false)
+            }
+        })
+
+        fetchQCMs().then((data) => {
+            if (!cancelled) {
+                setQCMS(data)
                 setLoading(false)
             }
         }).catch((error) => {
@@ -95,8 +117,17 @@ export function Curriculum(){
         </div>
 
         <section id="qcms">
-            <Qcm qcmName="Testini" rating="4.7" qcmUrl="#testini" />
-            <Qcm qcmName="QCMS 25" rating="4.4" qcmUrl="#qcms-25" />
+            {loading && <p>Loading QCMs...</p>}
+            {!loading && errorMessage && <p>{errorMessage}</p>}
+            {!loading && !errorMessage && qcms.length === 0 && <p>No QCMs found.</p>}
+            {!loading && !errorMessage && qcms.map((qcm) => (
+                <Qcm
+                    key={qcm.id}
+                    qcmName={qcm.qcm_name}
+                    rating={qcm.rating}
+                    qcmUrl={qcm.qcm_url}
+                />
+            ))}
         </section>
         <div className="title">
             <span className="material-icons">psychology</span>

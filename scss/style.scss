@@ -281,6 +281,10 @@ main{
                     }
                 }
 
+                a{
+                    color: var(--on-tertiary-container)
+                }
+
                 .deets {
                     @include utils.generateFlex(column, center, center);
                     p{

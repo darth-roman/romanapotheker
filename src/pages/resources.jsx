@@ -22,7 +22,7 @@ export function Resources (){
         }
 
         async function fetchDrive(){
-            const { data, error } = await supabase.schema("public").from("drives").select("*").order("drive_name", { ascending: true })
+            const { data, error } = await supabase.schema("public").from("drives").select("*").order("drive_name", { ascending: false })
             if (error) {
                 throw error
             }

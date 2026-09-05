@@ -283,6 +283,9 @@ main #qcms .qcm .qcm-head .cover span {
   padding: 1rem;
   font-size: 2rem;
 }
+main #qcms .qcm .qcm-head a {
+  color: var(--on-tertiary-container);
+}
 main #qcms .qcm .qcm-head .deets {
   display: flex;
   flex-direction: column;
