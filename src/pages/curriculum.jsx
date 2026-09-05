@@ -45,16 +45,24 @@ export function Curriculum(){
         <section id="welcome">
             <h2>Welcome to Pharmacy</h2>
             <p>
-                Your comprehensive, open-access
-                companion for pharmacy studies.
-                Explore curriculum maps, resource
-                directories, and expert advice—all
-                designed to help you navigate your
-                academic journey with confidence.
-                Created by a fellow student to simplify
-                your learning experience.
+                First of all, congratulations 🥳🎉 for being accepted to this field,
+                whether you chose to be here or sent to be here,
+                you are in for a great adventure (+💶💶💶)
             </p>
-
+            <p>
+                My name is Abderrahmane, you can call me Roman,  and I am a 4th year student
+                <p>
+                    This is a small gift from me, and some other colleagues who helped collecting 
+                    some resources, to you!
+                </p>
+                <p>
+                    This is a guide to your new journey, that is designed to help you find useful resources,
+                    information about what will you study and advices from other students who have been in your shoes
+                </p>
+            </p>
+            <p>
+                And my favorite advice, comes from the Latin saying "<strong><em>Si vis pacem, para bellum</em></strong>", if you want peace, prepare for war!, so <strong>PREPARE FOR WAR</strong>
+            </p>
             <div id="contributors"></div>
             <a href="https://darth-roman.github.io/" target="_blank" rel="noopener noreferrer">Visit My Website</a>
 
